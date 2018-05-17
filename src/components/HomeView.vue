@@ -26,15 +26,15 @@
         fluid
         grid-list-lg
       >
-        <v-layout>
-          <v-flex xs12 sm6>
+        <v-layout row wrap>
+          <v-flex xs12 sm12 md6>
             <output-view
               title="Prefix"
               v-model="prefix"
               class="mt-2"
             />
           </v-flex>
-          <v-flex xs12 sm6>
+          <v-flex xs12 sm12 md6>
             <output-view
               title="Postfix"
               v-model="postfix"
@@ -45,6 +45,18 @@
       </v-container>
     </v-slide-y-transition>
   </template>
+
+  <v-footer
+    dark
+    fixed
+    color="primary"
+  >
+    <v-layout justify-center>
+      <div class="mono caption">
+        &copy; 2018
+      </div>
+    </v-layout>
+  </v-footer>
 
 </v-container>
 </template>

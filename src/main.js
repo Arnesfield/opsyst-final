@@ -17,7 +17,7 @@ Vue.use(Vuetify, {
   theme: {
     primary: colors.indigo.base,
     secondary: colors.indigo.darken1,
-    accent: colors.pink.accent4,
+    accent: colors.pink.accent3,
     warning: colors.deepOrange.lighten1
   }
 })
