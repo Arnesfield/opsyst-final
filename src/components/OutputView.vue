@@ -29,7 +29,7 @@ export default {
   },
 
   created() {
-    this.text = value
+    this.text = this.value
   }
 }
 </script>

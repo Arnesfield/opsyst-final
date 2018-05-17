@@ -7,6 +7,8 @@ import router from './router'
 
 import colors from 'vuetify/es5/util/colors'
 import routerCond from './router/cond'
+import toPrefix from './assets/js/toPrefix'
+import toPostfix from './assets/js/toPostfix'
 
 import 'vuetify/dist/vuetify.min.css'
 import './assets/css/main.css'
@@ -21,6 +23,8 @@ Vue.use(Vuetify, {
 })
 
 Vue.config.productionTip = false
+Vue.prototype.$toPrefix = toPrefix
+Vue.prototype.$toPostfix = toPostfix
 
 routerCond(router)
 

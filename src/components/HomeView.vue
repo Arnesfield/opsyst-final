@@ -15,7 +15,7 @@
         label="Enter infix expression here"
         v-model="infix"
         :append-icon="infix ? 'close' : undefined"
-        :append-icon-cb="infix ? clearInput : () => {}"
+        :append-icon-cb="infix ? clear : () => {}"
       />
     </div>
   </v-layout>
@@ -63,6 +63,18 @@ export default {
     postfix: null
   }),
 
+  watch: {
+    infix(e) {
+      if (!e) {
+        this.clear()
+        return
+      }
+
+      this.prefix = this.$toPrefix(e)
+      this.postfix = this.$toPostfix(e)
+    }
+  },
+
   computed: {
     varHeight() {
       return this.infix ? 132 : 94
@@ -76,8 +88,10 @@ export default {
   },
 
   methods: {
-    clearInput() {
+    clear() {
       this.infix = null
+      this.prefix = null
+      this.postfix = null
       if (this.$refs.input) {
         this.$refs.input.focus()
       }
