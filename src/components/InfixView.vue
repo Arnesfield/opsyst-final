@@ -62,7 +62,7 @@
 </template>
 
 <script>
-import OutputView from './OutputView'
+import OutputView from '@/include/OutputView'
 
 export default {
   name: 'infix-view',
