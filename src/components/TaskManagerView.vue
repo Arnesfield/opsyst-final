@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'home-view'
+  name: 'task-manager-view'
 }
 </script>

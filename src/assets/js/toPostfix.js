@@ -1,4 +1,4 @@
-import algo from './algo'
+import algo from './infixAlgo'
 
 export default function(infix) {
   infix = infix.replace(/\s*/g, '')
