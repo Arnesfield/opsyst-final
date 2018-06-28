@@ -20,7 +20,7 @@
         >
           <div class="full-width">
             <span
-              class="pa-2 white--text"
+              class="pa-2 white--text mono"
               style="background-color: rgba(0,0,0,0.2)"
             >{{ task.duration }}</span>
           </div>

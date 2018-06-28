@@ -1,3 +1,13 @@
+.next-btn {
+  background-color: rgba(0,0,0,0);
+  cursor: pointer;
+  transition: background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.next-btn:hover {
+  background-color: rgba(0,0,0,0.1)
+}
+
 .full-width {
   width: 100%;
 }

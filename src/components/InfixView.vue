@@ -3,12 +3,24 @@
 
   <v-layout justify-center>
     <div style="width: 75%">
-      <h1
-        class="display-3 grey--text text--darken-1 smooth-mtop mono"
+      <v-layout
+        align-center
+        class="smooth-mtop"
         :style="{
           'margin-top': 'calc(100vh / 2 - ' + varHeight + 'px' + ')'
         }"
-      ><span class="primary--text">infix</span>.io</h1>
+      >
+        <h1
+          class="display-3 grey--text text--darken-1 mono"
+        ><span class="primary--text">infix</span>.io</h1>
+        <v-spacer/>
+        <div
+          class="next-btn px-3 py-2"
+          @click="$router.push('/tasks')"
+        >view&nbsp;<span class="primary--text text--lighten-1">task manager</span>
+          <v-icon>arrow_forward</v-icon>
+        </div>
+      </v-layout>
       <v-text-field
         solo
         ref="input"

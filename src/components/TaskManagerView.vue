@@ -3,18 +3,28 @@
 
   <v-layout justify-center>
     <div style="width: 75%">
-      <h1
-        class="display-3 grey--text text--darken-1 smooth-mtop mono"
+      <v-layout
+        align-center
+        class="smooth-mtop"
         :style="{
           'margin-top': 'calc(100vh / 2 - (78px + ' + varHeight + ' / 2))'
         }"
-      ><span class="primary--text">taskmngr</span>.io</h1>
+      >
+        <h1
+          class="display-3 grey--text text--darken-1 mono"
+        ><span class="primary--text">taskmngr</span>.io</h1>
+        <v-spacer/>
+        <div
+          class="next-btn px-3 py-2"
+          @click="$router.push('/infix')"
+        >view&nbsp;<span class="primary--text text--lighten-1">infix converter</span>
+          <v-icon>arrow_forward</v-icon>
+        </div>
+      </v-layout>
     </div>
   </v-layout>
 
-  <v-divider/>
-
-  <v-container grid-list-lg id="task-container">
+  <v-container grid-list-lg id="task-container" v-if="tasks.length">
     <v-layout row wrap>
       <v-flex
         xs12
@@ -32,11 +42,13 @@
     </v-layout>
   </v-container>
 
+  <v-subheader v-if="tasks.length">Total tasks:&nbsp;<strong v-text="tasks.length"/></v-subheader>
+
   <v-btn
     dark
     large
     block
-    color="primary"
+    color="primary lighten-1"
     @click="createTask"
   >
     <v-icon>add</v-icon>
@@ -78,7 +90,8 @@ export default {
   
   data: () => ({
     tasks: [],
-    varHeight: '0px'
+    varHeight: null,
+    defaultVarHeight: '30px'
   }),
 
   watch: {
@@ -108,7 +121,7 @@ export default {
     setVarHeight() {
       this.$nextTick(() => {
         let e = document.getElementById('task-container')
-        this.varHeight = e ? window.getComputedStyle(e).height : '0px'
+        this.varHeight = e ? window.getComputedStyle(e).height : this.defaultVarHeight
       })
     }
   }
