@@ -4,7 +4,7 @@
   <v-layout justify-center>
     <div style="width: 75%">
       <h1
-        class="display-3 grey--text text--darken-1 smooth-mtop"
+        class="display-3 grey--text text--darken-1 smooth-mtop mono"
         :style="{
           'margin-top': 'calc(100vh / 2 - ' + varHeight + 'px' + ')'
         }"

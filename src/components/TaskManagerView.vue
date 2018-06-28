@@ -4,7 +4,7 @@
   <v-layout justify-center>
     <div style="width: 75%">
       <h1
-        class="display-3 grey--text text--darken-1"
+        class="display-3 grey--text text--darken-1 smooth-mtop mono"
         :style="{
           'margin-top': 'calc(100vh / 2 - (78px + ' + varHeight + ' / 2))'
         }"
@@ -43,8 +43,18 @@
     <span>Add a task!</span>
   </v-btn>
 
-  <div class="mt-3 mb-5">
+  <div
+    class="mt-3"
+    v-if="tasks.length"
+    style="margin-bottom: 80px"
+  >
+    <v-subheader>Using&nbsp;<strong class="underline mono">First Come First Serve (FCFS)</strong>:</v-subheader>
     <task-bar-view :tasks="tasks"/>
+    <v-subheader class="mt-2">Using&nbsp;<strong class="underline mono">Shortest Job First (SJF)</strong>:</v-subheader>
+    <task-bar-view
+      is-sorted
+      :tasks="tasks"
+    />
   </div>
 
   <footer-view/>
@@ -104,3 +114,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.underline {
+  border-bottom: 3px solid #757575
+}
+</style>
