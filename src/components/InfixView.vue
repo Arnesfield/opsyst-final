@@ -46,28 +46,20 @@
     </v-slide-y-transition>
   </template>
 
-  <v-footer
-    dark
-    fixed
-    color="primary"
-  >
-    <v-layout justify-center>
-      <div class="mono caption">
-        &copy; 2018
-      </div>
-    </v-layout>
-  </v-footer>
+  <footer-view/>
 
 </v-container>
 </template>
 
 <script>
 import OutputView from '@/include/OutputView'
+import FooterView from '@/include/FooterView'
 
 export default {
   name: 'infix-view',
   components: {
-    OutputView
+    OutputView,
+    FooterView
   },
   data: () => ({
     infix: null,
